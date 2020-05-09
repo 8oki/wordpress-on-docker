@@ -35,7 +35,7 @@ To delete the wordpress data, run the command.
 $ make stop 
 ```
 
-### Env Vars
+## Env Vars
 
 The following assiged values are just an example.
 
