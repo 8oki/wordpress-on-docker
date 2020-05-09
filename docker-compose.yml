@@ -1,0 +1,33 @@
+version: "3"
+services:
+  wordpress:
+    image: wordpress
+    container_name: wp_server
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+      - ./container/wordpress/html:/var/www/html
+    depends_on:
+      - db
+    environment:
+      - TZ=${TZ}
+      - WORDPRESS_DB_HOST=db
+      - WORDPRESS_DB_USER=${DB_USERNAME}
+      - WORDPRESS_DB_PASSWORD=${DB_PASSWORD}
+      - WORDPRESS_DB_NAME=${DB_DATABASE}
+
+  db:
+    image: mysql:5.7
+    container_name: wp_db
+    restart: unless-stopped
+    expose:
+      - 3306
+    volumes:
+      - ./container/mysql/data:/var/lib/mysql
+    environment:
+      - TZ=${TZ}
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}

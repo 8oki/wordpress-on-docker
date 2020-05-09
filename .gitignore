@@ -1,0 +1,9 @@
+# direnv file
+.envrc
+
+# volume mount
+container/mysql/data/*
+container/wordpress/html/*
+
+# log files
+**/log/*
