@@ -1,4 +1,4 @@
-# wordpress-on-docker
+# Wordpress on Docker
 Deploy Wordpress on Docker
 
 You can test out WordPress without any hard works!!
@@ -7,13 +7,14 @@ Let's `git clone` right now!!
 
 ## Before Use
 
-You need to configure env vars first. You have two choice to do this. Please refet to [Env Vars Section](#EnvVars)
-
-- direnv
-  - Install direnv
-  - Create `.envrc` file and write required env vars
-  - `$ direnv allow .`
-- manual export
+1. Install `make`
+2. Configure env vars first. You have two choice to do this. Ref: [Env Vars Section](#env-vars)
+   - direnv
+     - Install direnv
+     - Edit `.envrc` file and write required env vars
+     - `$ direnv allow .`
+   - manual export
+3. Run `$ make init`
 
 ## How to Use
 
